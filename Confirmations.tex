@@ -1,0 +1,286 @@
+% Afficher des recommendations concernant la syntaxe.
+\RequirePackage[orthodox,l2tabu]{nag}
+\RequirePackage{luatex85}
+% Paramètres du document.
+\documentclass[%
+a5paper%                       Taille de page.
+,fontsize=12pt%                Taille de police.
+,DIV=15%                       Plus grand => des marges plus petites.
+,titlepage=off%                Faut-il une page de titre ?
+,headings=optiontoheadandtoc%  Effet des paramètres optionnels de section.
+,headings=small%
+,parskip=false%
+,openany%
+]{scrbook}
+\renewcommand*\partheademptypage{\thispagestyle{empty}}
+\newcounter{facteur}\setcounter{facteur}{17}
+
+%\usepackage{geometry}
+\usepackage{gredoc,mudoc,lyluatex}
+\usepackage{pdfpages,transparent,array,ltablex}
+
+%%%%%%%%%%%%%%%%%%%%%%% Paramètres variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Taille des partitions grégoriennes.                                                      %%
+\grechangedim{overhepisemalowshift}{.7mm}{scalable}
+\grechangedim{hepisemamiddleshift}{1.4mm}{scalable}
+\grechangedim{overhepisemahighshift}{2.1mm}{scalable}
+\grechangedim{vepisemahighshift}{2.1mm}{scalable}
+%\grechangestafflinethickness{50} %%% epaisseur des lignes
+\grechangestaffsize{\value{facteur}}%%
+%\grecommentary{mon commentaire}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Par souci de clarté, la définition des commandes est reportée dans un document annexe.
+\addtolength{\voffset}{2mm}\addtolength{\headsep}{-2mm}
+\setlength{\extrarowheight}{2mm}
+\addto\captionsfrench{%
+  \renewcommand{\indexname}{Index des chants}%
+}
+
+\pdfcompresslevel=9
+
+\newcommand{\lieu}[1]{\hfill\linebreak[3]\hspace*{\stretch{1}}\nolinebreak\mbox{\emph{(#1)}}}
+
+\newcommand{\commandement}[1]{\noindent\textbf{#1}}
+
+\newcommand{\schola}[1]{}\newcommand{\foule}[1]{#1}
+\providecommand{\dest}{foule}
+
+\newcommand{\bgimage}[1]{% %%%% image "background"
+\raisebox{-.45\paperheight}[0pt][0pt]{%
+  \transparent{0.3}%
+  \includegraphics[width=.7\paperwidth,height=.7\paperheight,keepaspectratio=true]{img/#1}%
+  }%
+}
+
+\def\arraystretch{1.2}
+
+%\def\blindsection#1{\markright{#1}\addcontentsline{toc}{section}{#1}}
+
+%\pagestyle{empty}
+\newcommand{\reponsegras}[2]{
+\versio{\textbf{#1}}{\textbf{#2}}
+}
+
+\title{
+\vspace*{\stretch{0,5}}%
+%\Large{
+Cérémonie de confirmations
+%}
+\vspace*{\stretch{1}}
+}
+\author{\includegraphics[width=12cm]{img/Motif_Pentecôte.jpg}}
+\date{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\rubrica{Avant l'entrée du Pontife, les confirmands ont pris place à l'église aux premiers rangs, les garçons côté évangile, les filles côté épître. Parrains et marraines sont à côté de leur filleul.}
+\section*{Veni Creator}
+\rubrica{On se met à genoux pour la première strophe.}
+\cantus{Hymne}{VeniCreator-intonation}{Hymn.}{8}
+\vulgo{1. Venez Esprit Créateur, visitez les âmes de vos fidèles, comblez de la grâce d'en haut les Cœurs que vous avez créés.}
+\noindent
+\versio{%
+2. Qui díceris Paráclitus,\\
+Altíssimi donum Dei,\\
+Fons vivus, ignis, cáritas\\
+Et spiritális únctio.}{%
+\small {2. Vous qu'on appelle Conso\-lateur, don du Dieu très-haut, source vive, feu, charité et onction spirituelle.}}
+
+\versio{%
+3. Tu septifórmis múnere,\\
+Dig\textit{i}tus patérnæ déxteræ,\\
+Tu rite promíssum Patris,\\
+Sérmone ditans gúttura.}{%
+\small {3. Vous l'Esprit aux sept dons, le doigt de Dieu, la promesse authentique du Père, qui mettez sa parole sur nos lèvres.}}
+
+\versio{%
+4. Accénde lumen sénsibus,\\
+Infúnd\textit{e} amórem córdibus,\\
+Infírma nostri córporis\\
+Vírtute firmans pérpeti.}{%
+\small {4. Eclairez nos esprits de votre lumière, mettez l'amour dans nos cœurs~; soutenez la faiblesse de notre corps par votre constante vigueur.}}
+
+\versio{%
+5. Hostem repéllas lóngius,\\
+Pacémque dones prótinus~:\\
+Ductóre sic te pr\'\ae vio\\
+Vitémus omne nóxium.}{%
+\small {5. Chassez l'ennemi loin de nous, donnez-nous sans retard la paix~; guidez-nous, et que sous votre conduite nous évitions tout mal.}}
+
+\versio{%
+6. Per te sciámus da Patrem,\\
+Noscámus atque Fílium,\\
+Tequ\textit{e} utriúsque Spíritum\\
+Credámus omni témpore.}{%
+\small {6. Faites-nous connaître le Père, faites-nous connaître le Fils, donnez-nous de toujours croire en vous qui êtes l'Esprit du Père et du Fils.}}
+
+\versio{%
+7. Deo Patri sit glória,\\
+Et Fílio qu\textit{i} a mórtuis\\
+Surréxit, ac Paráclito,\\
+In sæculórum s\'\ae cula. Amen.}{%
+\small {7. Gloire soit à Dieu le Père, et au Fils ressuscité des morts, et à l'Esprit consolateur dans les siècles des siècles. Ainsi soit-il.}}
+%\end{longtable}
+
+\section*{Homélie}
+\rubrica{On s'assied pour écouter le sermon de Monseigneur.}
+
+\section*{Cérémonie préparatoire}
+\rubrica{Après l'homélie, les confirmands et leur parrain (ou marraine) s'agenouillent, tandis que le chœur demeure assis.}
+
+\versio{%
+Spíritus Sanctus supervéniat in vos, et virtus Altíssimi custódiat vos a peccátis.}{%
+Que l'Esprit-Saint descende en vous, et que la vertu du Très-Haut vous garde de tout péché.}
+
+\reponsegras{%
+\rb\ Amen.}{%
+\rb\ Ainsi soit-il.}
+
+\versio{%
+\vb\ \crux Adiutórium nostrum in nómine Dómini.}{%
+\vb\ \crux Notre secours est dans le nom du Seigneur.}
+
+\reponsegras{%
+\rb\ Qui fecit cælum et terram.}{%
+\rb\ Qui a fait le ciel et la terre.}
+
+\versio{%
+\vb\ Dómine, exáudi oratiónem meam.}{%
+\vb\ Seigneur, exaucez ma prière.}
+
+\reponsegras{%
+\rb\ Et clamor meus ad te véniat.}{%
+\rb\ Et que mon cri s'élève jusqu'à vous.}
+
+\versio{%
+\vb\ Dóminus vobíscum.}{%
+\vb\ Le Seigneur soit avec vous.}
+
+\reponsegras{%
+\rb\ Et cum spíritu tuo.}{%
+\rb\ Et avec votre esprit.}
+%\end{longtable}
+
+\rubrica{Le Pontife, \emph{étendant alors les mains} sur tous les confirmands, continue~:}
+\versio{%
+{\centering Orémus.\par}
+Omnípotens sempitérne Deus, qui regeneráre dignátus es hos fámulos tuos ex aqua et Spíritu Sancto, quique dedísti eis remissiónem ómnium peccatórum~: emítte in eos septifórmem Spíritum Sanctum Paráclitum de cælis. \textbf{\rb\ Amen.}}{%
+{\centering Prions.\par}
+Dieu tout-puissant et éternel, qui avez fait renaître vos serviteurs ici présents par l'eau et le Saint-Esprit, et qui leur avez donné la rémission de leurs péchés, envoyez-leur du haut du ciel l'Esprit-Saint consolateur avec ses sept dons. \textbf{\rb\ Ainsi soit-il.}}
+\versio{%
+\vb\ Spíritum sapiéntiæ et intelléctus.}{%
+\vb\ L'Esprit de sagesse et d'intelligence.}
+
+\reponsegras{%
+\rb\ Amen.}{%
+\rb\ Ainsi soit-il.}
+
+\versio{%
+\vb\ Spíritum consílii et fortitúdinis.}{%
+\vb\ L'Esprit de conseil et de force.}
+
+\reponsegras{%
+\rb\ Amen.}{%
+\rb\ Ainsi soit-il.}
+
+\versio{%
+\vb\ Spíritum sciéntiæ et pietátis.}{%
+\vb\ L'Esprit de science et de piété.}
+
+\reponsegras{%
+\rb\ Amen.}{%
+\rb\ Ainsi soit-il.}
+
+\versio{%
+\vb\ Adímple eos Spíritu timóris tui, et consígna eos signo crucis \crux\ Christi in vitam propitiátus ætérnam. Per eúmdem Dóminum nostrum Iesum Christum Fílium tuum, qui tecum vivit et regnat in unitáte eiúsdem Spíritus Sancti, Deus, per ómnia s\'\ae cula sæculórum.}{%
+\vb\ Remplissez-les de l'Esprit de votre crainte, et marquez-les du signe de la croix \crux\ du Christ pour la vie éternelle. Par le même Jésus-Christ, Notre-Seigneur, votre Fils, qui, étant Dieu, vit et règne avec vous en l'unité du même Saint-Esprit, dans tous les siècles des siècles.}
+
+\reponsegras{%
+\rb\ Amen.}{%
+\rb\ Ainsi soit-il.}
+\section*{Le sacrement}
+
+\rubrica{Le cérémoniaire invite les confirmands à s'avancer, en commençant par les garçons. Les parrains (ou marraines) montent à gauche. Ils génuflectent ensemble, et le parrain (ou la marraine) donne au cérémoniaire le papier sur lequel est inscrit le nom du confirmand. Tandis que le confirmand se met à genoux sur la marche, devant l'évêque, le parrain (ou la marraine) reste debout, posant la main droite (non gantée) sur l'épaule droite de son filleul.}
+\versio{%
+\textsc{N..., signo \crux\ te signo Crucis et confírmo te Chrísmate salútis, in nómine \crux\ Patris, et \crux\ Fílii, et Spíritus \crux\ Sancti.}}{%
+\textsc{N..., je te marque du signe \crux\ de la Croix et je te confirme avec le Chrême du salut, au nom du \crux\ Père, et du \crux\ Fils, et du Saint \crux\ Esprit.}}
+\rubrica{\textbf{On répond~:}}
+\reponsegras{%
+Amen.}{%
+Ainsi soit-il.}
+\smallskip
+\rubrica{L'Evêque donne ensuite un \emph{très léger soufflet} au confirmé en lui disant~:}
+\versio{%
+Pax tecum.}{%
+La paix soit avec toi.}
+\rubrica{Le nouveau confirmé se lève alors et se rend sans aucune génuflexion devant le prêtre assistant, qui lui purifie le front. Il génuflecte ensuite avec son parrain (ou sa marraine), et retourne à sa place~; les nouveaux confirmés se mettent à genoux, tandis que les parrains et marraines s'assoient.}
+\medskip
+\rubrica{La cérémonie achevée, la schola chante l'antienne suivante~:}
+\vulgo{Affermissez, ô Dieu ce que vous avez fait en nous, du haut de votre saint Temple, en Jérusalem.} 
+\cantus{Antienne}{ConfirmaHoc}{Ant}{8 c.}
+\section*{Prières finales et bénédiction des nouveaux confirmés}
+
+\rubrica{Tous se lèvent, \textbf{sauf les nouveaux confirmés.}}
+
+\versio{%
+\vb\ Osténde nobis, Dómine, miseri\-córdiam tuam.}{%
+\vb\ Montrez-nous, Seigneur, votre miséricorde.}
+
+\reponsegras{%
+\rb\ Et salutáre tuum da nobis.}{%
+\rb\ Accordez-nous votre salut.}
+
+\versio{%
+\vb\ Dómine, exáudi oratiónem meam.}{%
+\vb\ Seigneur, exaucez ma prière.}
+
+\reponsegras{%
+\rb\ Et clamor meus ad te véniat.}{%
+\rb\ Que mon appel parvienne jusqu'à vous.}
+
+\versio{%
+\vb\ Dóminus vobíscum.}{%
+\vb\ Le Seigneur soit avec vous.}
+
+\reponsegras{%
+\rb\ Et cum spíritu tuo.}{%
+\rb\ Et avec votre esprit.}
+
+\versio{%
+{\centering Orémus.\par}
+Deus, qui Apóstolis tuis San\-ctum dedísti Spíritum et per eos eorúmque successóres céteris fidélibus tradéndum esse voluísti~: réspice propítius ad humilitátis nostræ famulátum, et præsta~; ut eórum corda, quorum frontes sacro Chrísmate delinívimus, et signo sanctæ Crucis signávimus, idem Spíritus Sanctus, in eis supervéniens, templum glóriæ suæ dignánter inhabitándo perfíciat~: qui cum Patre et eódem Spíritu Sancto vivis et regnas Deus, in s\'\ae cula sæculórum.}{%
+{\centering Prions.\par}
+Dieu qui avez donné le Saint-Esprit à vos apôtres et qui avez voulu que, par eux et leurs successeurs, il fût transmis aux autres fidèles, regardez avec bonté vos humbles serviteurs que nous sommes, et exaucez nous. Que le Saint-Esprit descende dans le cœur de ceux dont nous avons oint le front avec le saint chrême en les marquant du signe de la sainte Croix, et qu'il daigne y établir sa demeure, faisant d'eux le temple de sa gloire. Vous qui, étant Dieu, vivez et régnez avec le Père et ce même Esprit, dans les siècles des siècles.}
+
+\reponsegras{%
+\rb\ \textbf{Amen}.}{%
+\rb\ Ainsi soit-il.}
+
+\versio{%
+Ecce sic benedicétur omnis homo, qui timet Dóminum.}{%
+Ainsi sera béni tout homme qui craint le Seigneur.}
+\medskip
+\versio{%
+Benedícat \crux\ vos Dóminus ex Sion~: ut videátis bona Ierúsalem ómnibus diébus vitæ vestræ, et habeátis vitam ætérnam.}{%
+Que de Sion le Seigneur vous \crux\ bénisse, pour que vous voyiez les biens de Jérusalem tous les jours de votre vie, et que vous ayez la vie éternelle.}
+
+\reponsegras{%
+\rb\ Amen.}{%
+\rb\ Ainsi soit-il.}
+\section*{Profession de foi}
+
+\rubrica{Les confirmés se lèvent pour réciter les trois prières qui suivent~:}
+
+Je crois en Dieu...\hfill
+Notre Père...\hfill
+Je vous salue, Marie,~...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{empty}
+\vspace*{\stretch{1}}
+\centering{\includegraphics[width=7cm]{img/saint-Esprit.pdf}}
+\vspace*{\stretch{1}}
+\end{document}
