@@ -5,7 +5,6 @@ Ce document est un livret pour suivre la cérémonie de confirmations.
 Il a été conçu à partir du projet [Graduale](https://github.com/jperon/graduale)
 
 **[On peut télécharger le pdf directement ici](https://github.com/mimo38/PDF/raw/master/Confirmations.pdf)**
-==================================================================
 
 Saisi en LaTeX, il est conçu de façon à séparer autant que possible la
 définition des commandes du corps du document, de façon à rendre facile la
