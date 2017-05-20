@@ -19,9 +19,7 @@ Outre les commandes fournies par les *KOMA-scripts* et par *GregorioTeX*,
 sur lesquels il est basé, le gabarit utilisé définit les commandes décrites
 brièvement ci-après. Un petit dessin valant mieux qu'un long discours, le
 meilleur moyen de comprendre leur fonctionnement est de se reporter au
-contenu de 00-Document.tex. Cependant, ce dernier ne contient pas de textes
-traduits en parallèle du texte latin ; les commandes de traduction sont
-cependant assez naturelles à utiliser.
+contenu de Confirmations.tex. 
 
 ### Rubriques
 
